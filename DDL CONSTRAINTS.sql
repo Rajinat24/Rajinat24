@@ -1,0 +1,40 @@
+CREATE DATABASE SALES;
+USE SALES;
+CREATE TABLE Orders
+(Order_Id INT PRIMARY KEY,
+Cust_Name VARCHAR(20) NOT NULL,
+Pdct_Category varchar(20),
+Ordered_item  VARCHAR(15),
+Contact_No VARCHAR(20)
+);
+DESC Sales_Orders;
+ALTER TABLE Orders ADD COLUMN Order_Qty INT ;
+RENAME TABLE Orders TO Sales_Orders;
+DESC Sales_Orders;
+SELECT *FROM Sales_Orders;
+SELECT Order_Id,Cust_Name,Pdct_Category,Ordered_item,Contact_No,Order_Qty FROM Sales_orders;
+USE SALES;
+
+
+INSERT INTO Sales_Orders(Order_Id,Cust_Name,Pdct_Category,Ordered_item,Contact_No, Order_Qty) VALUES
+( 1,'ANUSREE','ELECTRONICS','PHONE',2323232323,1),
+(2,'AMEYA','BOOK','RECORD',2222222222,3),
+(3,'SALINI','COOKWARE','GLASS SET',3333333333,4),
+(4,'JECOB','ELECTRONICS', 'LAPTOP',4444444444,11),
+(5,'PREENU','BOOK','RECORD',5555555555,2),
+(6,'RENIIL','BOOK','CLASSMATE',6666666666,4),
+(7,'DHILEEP','FURNITURE','CHAIR',7777777777,5),
+(8,'KIRAN','INSTRUMENT','KEYBOARD',8888888888,12),
+(9,'ROSHAN','ELECTRONICS','PHONE',9999999999,2),
+(10,'RAJEEV','ELECTRONICS','TABLET',1010101010,11);
+DESC Sales_Orders;
+
+SELECT *FROM Sales_Orders;
+SELECT Cust_Name,Ordered_item FROM Sales_Orders;
+UPDATE Sales_Orders SET Ordered_item='IPHONE' WHERE Order_Id=10;
+DROP TABLE Sales_Orders;
+
+
+
+
+
